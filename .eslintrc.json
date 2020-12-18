@@ -10,6 +10,7 @@
     "plugin:import/warnings",
     "plugin:import/typescript"
   ],
+  "ignorePatterns": ["/*.js"],                        // Don't parse .js files in root folder, they are config files
   "env": {
     "es2017": true,
     "node": true,
@@ -20,21 +21,21 @@
     "jest"
   ],
   "rules": {
-    "import/extensions": [
+    "import/extensions": [                            // Enable .ts file extension for imports
       "error",
       "ignorePackages",
       {
         "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
+        "ts": "never"
       }
     ],
     "lines-between-class-members": "off",
     "comma-dangle": "off",
-    // Need done callback in supertest to mock http server
-    "jest/no-done-callback": "off",
-    // Hide import warnings in test files. supertest is needed in /test
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.spec.ts", "**/*.spec.tsx"]}]
+    "jest/no-done-callback": "off",                   // Need done callback in supertest to mock http server
+    "import/no-extraneous-dependencies": [            // Make sure supertest is not flagged as dependency in test folder
+      "error", {
+        "devDependencies": ["**/*.spec.ts"]
+      }
+    ]
   }
 }

@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const path = require('path');
 const dotenv = require('dotenv');
 

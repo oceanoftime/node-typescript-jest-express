@@ -1,13 +1,7 @@
 module.exports = {
   rootDir: './src',
-  transform: {
-    '.(ts|tsx)': 'ts-jest',
+  transform: {                                        // Make sure .ts code is converted before running tests
+    '.ts': 'ts-jest',
   },
-  testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
-  moduleFileExtensions: [
-    'ts',
-    'tsx',
-    'js',
-  ],
-  globalSetup: '<rootDir>/../dotenv-test.js'
+  globalSetup: '<rootDir>/../dotenv-test.js'          // Load dotenv test config through script
 };

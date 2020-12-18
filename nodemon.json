@@ -1,6 +1,6 @@
 {
   "watch": ["src"],
-  "ext": "ts,json",
+  "exec": "npm run nodemon:exec",
   "ignore": ["src/**/*.spec.ts"],
-  "exec": "ts-node -r dotenv/config ./src/index.ts"
+  "ext": "ts,js"
 }
