@@ -125,7 +125,7 @@ describe('should create Data items (integration)', () => {
     expect(response.status).toBe(200);
   });
 
-  it('items successfully added to db (integration)', async () => {
+  it('items successfully added to db', async () => {
     // Arange
     const seedling: Data = seedlings[0];
     const url = '/data/create';
